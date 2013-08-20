@@ -11,11 +11,13 @@ import javax.persistence.Id;
 public class Person implements Serializable{
 	private Integer id;
 	private String name;
+	
 	public Person(){}
-	public Person(String name) {
-		super();
+	
+	public Person(String name){
 		this.name = name;
 	}
+	
 	@Id @GeneratedValue
 	public Integer getId() {
 		return id;
@@ -23,13 +25,14 @@ public class Person implements Serializable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	@Column(length=10, nullable=false)
+	@Column(length=10,nullable=false)
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -37,6 +40,7 @@ public class Person implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -45,7 +49,7 @@ public class Person implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		final Person other = (Person) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

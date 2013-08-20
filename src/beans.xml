@@ -17,7 +17,8 @@
   	  <property name="entityManagerFactory" ref="entityManagerFactory"/>
    </bean>
  	<tx:annotation-driven transaction-manager="txManager"/>
-	
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean"/>
+	<bean name="/person/list" class="cn.itcast.web.action.PersonAction"/>
 
 	  
 </beans>
