@@ -17,7 +17,7 @@ public class PersonAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		request.setAttribute("person", personService.getPersons()); 
+		request.setAttribute("persons", personService.getPersons()); 
 		return mapping.findForward("list");
 	}
 }
